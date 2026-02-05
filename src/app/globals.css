@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background: #050505;
+  color: #fff;
+}
+
+body {
+  background: #050505;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hide scrollbar for clean aesthetic */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
