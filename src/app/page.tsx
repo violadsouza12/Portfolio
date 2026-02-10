@@ -4,7 +4,6 @@ import React from 'react';
 import { ArrowUpRight, Github, Linkedin, Mail, FileText, MapPin, Phone, Download } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-// --- YOUR DATA ---
 const DATA = {
   name: "Viola D'Souza",
   role: "Full Stack Engineer",
@@ -56,13 +55,11 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white font-sans selection:bg-emerald-400/30">
       
-      {/* BACKGROUND GLOW */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-purple-600/20 rounded-full blur-[120px]" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-emerald-600/15 rounded-full blur-[120px]" />
       </div>
 
-      {/* FLOATING NAVIGATION */}
       <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-auto">
         <div className="flex items-center gap-6 px-8 py-3 rounded-full border border-white/20 bg-black/60 backdrop-blur-xl shadow-2xl">
           <a href="#work" className="text-sm font-medium text-white/80 hover:text-white transition-colors">Work</a>
@@ -82,16 +79,9 @@ export default function Portfolio() {
 
       <main className="relative z-10 max-w-5xl mx-auto px-6 pt-32 pb-20">
         
-        {/* HERO SECTION */}
         <section className="min-h-[70vh] flex flex-col justify-center items-center text-center">
           
-          {/* PROFILE IMAGE + STATUS */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="relative mb-8"
-          >
+          <div className="relative mb-8 opacity-0 animate-[fadeIn_0.5s_ease-out_forwards]">
             <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-white/20 shadow-2xl">
               <img src="/profile.jpg" alt="Viola D'Souza" className="w-full h-full object-cover" />
             </div>
@@ -101,7 +91,7 @@ export default function Portfolio() {
                  <span className="text-[10px] font-bold tracking-widest text-emerald-300 uppercase hidden sm:block">Open to work</span>
                </div>
             </div>
-          </motion.div>
+          </div>
           
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -133,7 +123,6 @@ export default function Portfolio() {
           </motion.div>
         </section>
 
-        {/* PROJECTS (Bento Grid) */}
         <section id="work" className="py-24">
           <div className="flex items-baseline justify-between mb-12 border-b border-white/15 pb-4">
             <h2 className="text-sm font-bold tracking-widest text-white/60 uppercase">Projects</h2>
@@ -198,7 +187,6 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* EXPERIENCE (Clickable Certificates) */}
         <section id="about" className="py-24">
           <h2 className="text-sm font-bold tracking-widest text-white/60 uppercase mb-12 border-b border-white/15 pb-4">Experience</h2>
           <div className="space-y-4">
@@ -232,7 +220,6 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* CONTACT HERO */}
         <section id="contact" className="py-24">
           <div className="relative rounded-[2.5rem] bg-gradient-to-br from-white/15 to-black p-12 md:p-24 text-center border border-white/15 overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
@@ -262,6 +249,19 @@ export default function Portfolio() {
           <p>© 2026 {DATA.name}. All rights reserved.</p>
         </footer>
       </main>
+
+      <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: scale(0.9);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+      `}</style>
     </div>
   );
 }
