@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { ArrowUpRight, Github, Linkedin, Mail, FileText, MapPin, Phone, Download } from 'lucide-react';
+import { ArrowUpRight, Github, Linkedin } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const DATA = {
@@ -81,7 +81,7 @@ export default function Portfolio() {
         
         <section className="min-h-[70vh] flex flex-col justify-center items-center text-center">
           
-          <div className="relative mb-8 opacity-0 animate-[fadeIn_0.5s_ease-out_forwards]">
+          <div className="relative mb-8">
             <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-white/20 shadow-2xl">
               <img src="/profile.jpg" alt="Viola D'Souza" className="w-full h-full object-cover" />
             </div>
@@ -93,34 +93,19 @@ export default function Portfolio() {
             </div>
           </div>
           
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-5xl md:text-8xl font-bold tracking-tighter text-white mb-6 leading-[1.1]"
-          >
+          <h1 className="text-5xl md:text-8xl font-bold tracking-tighter text-white mb-6 leading-[1.1]">
             Viola D'Souza
-          </motion.h1>
+          </h1>
           
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg text-white/70 max-w-3xl leading-relaxed mb-10"
-          >
+          <p className="text-lg text-white/70 max-w-3xl leading-relaxed mb-10">
             {DATA.description}
-          </motion.p>
+          </p>
 
-          <motion.div 
-             initial={{ opacity: 0, y: 20 }}
-             animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.5, delay: 0.3 }}
-             className="flex gap-4"
-          >
+          <div className="flex gap-4">
             <a href="#work" className="px-8 py-4 bg-white text-black font-semibold rounded-full hover:scale-105 transition-transform shadow-lg">
               View Projects
             </a>
-          </motion.div>
+          </div>
         </section>
 
         <section id="work" className="py-24">
@@ -131,12 +116,8 @@ export default function Portfolio() {
           <div className="grid md:grid-cols-2 gap-6">
             {DATA.projects.map((project, idx) => {
               const CardContent = (
-                <motion.div 
+                <div 
                   key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
                   className="group relative h-[400px] flex flex-col justify-between rounded-3xl bg-white/8 border border-white/15 hover:border-white/30 transition-all hover:bg-white/12 overflow-hidden cursor-pointer"
                 >
                   {project.image && (
@@ -173,7 +154,7 @@ export default function Portfolio() {
                       ))}
                     </div>
                   </div>
-                </motion.div>
+                </div>
               );
 
               return project.link ? (
@@ -222,7 +203,7 @@ export default function Portfolio() {
 
         <section id="contact" className="py-24">
           <div className="relative rounded-[2.5rem] bg-gradient-to-br from-white/15 to-black p-12 md:p-24 text-center border border-white/15 overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+            <div className="absolute top-0 left-0 w-full h-full opacity-20"></div>
             
             <div className="relative z-10">
               <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">Let's build something <br/> exceptional.</h2>
@@ -249,19 +230,6 @@ export default function Portfolio() {
           <p>© 2026 {DATA.name}. All rights reserved.</p>
         </footer>
       </main>
-
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: scale(0.9);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-      `}</style>
     </div>
   );
 }
