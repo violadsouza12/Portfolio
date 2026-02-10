@@ -16,7 +16,7 @@ const DATA = {
     linkedin: "https://www.linkedin.com/in/viola-d-souza-23a14220b",
     github: "https://github.com/violadsouza12",
   },
-  description: "I thrive at the intersection of Full Stack Development, AI, and Data Science, driven by a relentless curiosity to understand how things work and how to make them better. I view every challenge as an opportunity to learn and every project as a chance to contribute meaningful knowledge to my team and the world. When I’m not building software, I’m fueling my creativity by travelling to unexplored places, playing basketball, or diving into a new subject. For me, growth is a lifestyle, both online and offline.",
+  description: "I thrive at the intersection of Full Stack Development, AI, and Data Science, driven by a relentless curiosity to understand how things work and how to make them better. I view every challenge as an opportunity to learn and every project as a chance to contribute meaningful knowledge to my team and the world. When I'm not building software, I'm fueling my creativity by travelling to unexplored places, playing basketball, or diving into a new subject. For me, growth is a lifestyle, both online and offline.",
   projects: [
     {
       title: "Carbon Sequestration Est.",
@@ -33,7 +33,6 @@ const DATA = {
       company: "Deloitte Australia",
       period: "2026",
       desc: "Completed job simulation involving data analysis and forensic technology.",
-      // Ensure 'deloitte-cert.pdf' is in your public folder
       link: "/deloitte-cert.pdf" 
     },
     {
@@ -41,7 +40,6 @@ const DATA = {
       company: "Salesforce (Virtual)",
       period: "2025",
       desc: "Built LWC components and managed Apex triggers for process automation.",
-      // Ensure 'smartbridge-cert.pdf' is in your public folder
       link: "/smartbridge-cert.pdf"
     },
     {
@@ -49,7 +47,6 @@ const DATA = {
       company: "TEDxSJEC",
       period: "2024",
       desc: "Curated talks for regional TEDx event.",
-      // Ensure 'tedx-cert.pdf' is in your public folder
       link: "/tedx-cert.pdf"
     }
   ]
